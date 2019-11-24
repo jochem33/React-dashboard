@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Varela+Round&display=swap');
+
+
+* {
+  font-family: 'Varela Round', 'Nunito', sans-serif;
+
+}
+
+h1 {
+  margin: 0 !important;
+
+}
+
+
+.componentContainer {
+    width: 100vw;
+    height: 100vh;
+    /* overflow-y: hidden; */
+    background-color: #787878;
+    display: grid;
+    /* grid-gap: 1vw 1vw; */
+    grid-template-areas:
+    'crypto weather weather bookmarks'
+    'news news time bookmarks'
+    'favorites favorites exchange github';
+    grid-template-columns: 25vw 25vw 25vw 25vw;
+    /* grid-template-rows: 24vh 24vh 24vh; */
+
+  }
+  
+  .dashboardComponent {
+    background-color: #3E3E3E;
+    color: white;
+    /* width: 30vw; */
+    /* height: 20vw; */
+    padding: 1vw;
+    overflow: hidden;
+    margin:1vw;
+  }
+
+  .gridItemCrypto {grid-area: crypto;}
+  .gridItemWeather {grid-area: weather;}
+  .gridItemBookmarks {grid-area: bookmarks;}
+  .gridItemNews {grid-area: news;}
+  .gridItemTime {grid-area: time;}
+  .gridItemFavorites {grid-area: favorites;}
+  .gridItemExchange {grid-area: exchange;}
+  .gridItemGithub {grid-area: github;}
+
+
+ 

@@ -1,26 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from "react"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Bookmarks from "./components/main/Bookmarks"
+import Crypto from "./components/main/Crypto"
+import Exchange from "./components/main/Exchange"
+import Favorites from "./components/main/Favorites"
+import Github from "./components/main/Github"
+import News from "./components/main/News"
+import Time from "./components/main/Time"
+import Weather from "./components/main/Weather"
+
+
+
+
+class App extends Component {
+    constructor() {
+        super()
+        this.state = {
+        }
+    }
+
+    
+    render() {
+        return (
+          <div className="componentContainer">
+                <Crypto />
+                <Weather />
+                <Bookmarks />
+                <News />
+                <Time />
+                <Favorites />
+                <Exchange />
+                <Github />
+          </div>
+      )
+    }
 }
 
-export default App;
+export default App
