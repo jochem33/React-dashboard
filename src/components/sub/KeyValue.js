@@ -11,7 +11,7 @@ class KeyValue extends Component {
     render() {
         return (
           <div>
-                <p>KeyValue</p>
+                <p>{this.props.keytitle}: {this.props.value}</p>
           </div>
       )
     }

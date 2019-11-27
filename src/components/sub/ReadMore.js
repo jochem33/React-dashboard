@@ -11,7 +11,7 @@ class ReadMore extends Component {
     render() {
         return (
           <div>
-                <p>ReadMore</p>
+                <a className="readmorelink" href={this.props.linkUrl}>Read more...</a>
           </div>
       )
     }
