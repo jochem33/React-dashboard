@@ -15,42 +15,68 @@ h1 {
 
 .readmorelink {
   color: white;
+  top: 4vh;
+  position: relative;
+  display: block;
 }
 
 .componentContainer {
-    width: 100vw;
-    height: 100vh;
-    /* overflow-y: hidden; */
-    background-color: #787878;
-    display: grid;
-    /* grid-gap: 1vw 1vw; */
-    grid-template-areas:
-    'crypto weather weather bookmarks'
-    'news news time bookmarks'
-    'favorites favorites exchange github';
-    grid-template-columns: 25vw 25vw 25vw 25vw;
-    /* grid-template-rows: 24vh 24vh 24vh; */
+  width: 100vw;
+  height: 100vh;
+  /* overflow-y: hidden; */
+  background-color: #787878;
+  display: grid;
+  /* grid-gap: 1vw 1vw; */
+  grid-template-areas:
+  'crypto weather weather bookmarks'
+  'news news time bookmarks'
+  'favorites favorites exchange github';
+  grid-template-columns: 25vw 25vw 25vw 25vw;
+  /* grid-template-rows: 24vh 24vh 24vh; */
 
-  }
-  
-  .dashboardComponent {
-    background-color: #3E3E3E;
-    color: white;
-    /* width: 30vw; */
-    /* height: 20vw; */
-    padding: 1vw;
-    overflow: hidden;
-    margin:1vw;
-  }
+}
 
-  .gridItemCrypto {grid-area: crypto;}
-  .gridItemWeather {grid-area: weather;}
-  .gridItemBookmarks {grid-area: bookmarks;}
-  .gridItemNews {grid-area: news;}
-  .gridItemTime {grid-area: time;}
-  .gridItemFavorites {grid-area: favorites;}
-  .gridItemExchange {grid-area: exchange;}
-  .gridItemGithub {grid-area: github;}
+.dashboardComponent {
+  background-color: #3E3E3E;
+  color: white;
+  /* width: 30vw; */
+  /* height: 20vw; */
+  padding: 1vw;
+  overflow: hidden;
+  margin:1vw;
+}
+
+.gridItemCrypto {grid-area: crypto;}
+.gridItemWeather {grid-area: weather;}
+.gridItemBookmarks {grid-area: bookmarks;}
+.gridItemNews {grid-area: news;}
+.gridItemTime {grid-area: time;}
+.gridItemFavorites {grid-area: favorites;}
+.gridItemExchange {grid-area: exchange;}
+.gridItemGithub {grid-area: github;}
 
 
- 
+.weatherContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+.cloudComponent {
+  justify-content: space-around;
+}
+
+.weatherDate {
+  text-align: center;
+}
+
+.weatherImage {
+  text-align: center;
+  margin: 0 3vw 0 3vw;
+  width: 3.5vw;
+}
+
+.weatherTemp {
+  text-align: center;
+}

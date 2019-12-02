@@ -73,13 +73,10 @@ class Crypto extends Component {
         fetch("https://api.kraken.com/0/public/Ticker?pair=" + this.state.crypto0.ticker + this.state.fiat)
             .then(response => response.json())
             .then(data => {
-                console.log(0, data)
-
                 let price = "loading";
                 if (data.result != null){
                     if (data.result["X" + this.state.crypto0.ticker + "Z" + this.state.fiat] != null){
                         price = data.result["X" + this.state.crypto0.ticker + "Z" + this.state.fiat].a[0]
-                        console.log(1, price)
 
                         this.setState({
                             crypto0: {
@@ -96,13 +93,10 @@ class Crypto extends Component {
         fetch("https://api.kraken.com/0/public/Ticker?pair=" + this.state.crypto1.ticker + this.state.fiat)
             .then(response => response.json())
             .then(data => {
-                console.log(1, data)
-
                 let price = "loading";
                 if (data.result != null){
                     if (data.result["X" + this.state.crypto1.ticker + "Z" + this.state.fiat] != null){
                         price = data.result["X" + this.state.crypto1.ticker + "Z" + this.state.fiat].a[0]
-                        console.log(1, price)
 
                         this.setState({
                             crypto1: {
@@ -119,13 +113,10 @@ class Crypto extends Component {
         fetch("https://api.kraken.com/0/public/Ticker?pair=" + this.state.crypto2.ticker + this.state.fiat)
             .then(response => response.json())
             .then(data => {
-                console.log(2, data)
-
                 let price = "loading";
                 if (data.result != null){
                     if (data.result["X" + this.state.crypto2.ticker + "Z" + this.state.fiat] != null){
                         price = data.result["X" + this.state.crypto2.ticker + "Z" + this.state.fiat].a[0]
-                        console.log(2, price)
 
                         this.setState({
                             crypto2: {
@@ -142,13 +133,10 @@ class Crypto extends Component {
         fetch("https://api.kraken.com/0/public/Ticker?pair=" + this.state.crypto3.ticker + this.state.fiat)
             .then(response => response.json())
             .then(data => {
-                console.log(3, data)
-
                 let price = "loading";
                 if (data.result != null){
                     if (data.result["X" + this.state.crypto3.ticker + "Z" + this.state.fiat] != null){
                         price = data.result["X" + this.state.crypto3.ticker + "Z" + this.state.fiat].a[0]
-                        console.log(3, price)
 
                         this.setState({
                             crypto3: {
@@ -161,37 +149,23 @@ class Crypto extends Component {
                     }
                 }
         })
-
-        console.log("fetchEnd")
     }
 
 
     componentDidMount() {
-        console.log("Mount")
-
         this.fetchData()
     }
 
 
     changeCrypto(ticker){
-        console.log("____________")
         this.setState({
             crypto: ticker
         })
-        console.log("changeticker")
         this.fetchData()
     }
 
-
-    componentDidUpdate(prevProps, prevState) {
-        console.log("didupdate")
-    }
     
     render() {
-        console.log("render")
-
-        console.log(this.state.crypto0)
-
         return (
           <div className="dashboardComponent gridItemCrypto">
               <h1>Crypto</h1>

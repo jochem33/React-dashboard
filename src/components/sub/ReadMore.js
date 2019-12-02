@@ -9,10 +9,20 @@ class ReadMore extends Component {
 
     
     render() {
+        let customText;
+        if(this.props.linkText) {
+            customText = this.props.linkText
+
+        } else {
+            customText = "Read more..."
+
+        }
+        
+
         return (
-          <div>
-                <a className="readmorelink" href={this.props.linkUrl}>Read more...</a>
-          </div>
+            <div>
+                <a className="readmorelink" href={this.props.linkUrl}>{customText}</a>
+            </div>
       )
     }
 }
