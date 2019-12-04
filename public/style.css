@@ -80,3 +80,17 @@ h1 {
 .weatherTemp {
   text-align: center;
 }
+
+
+
+
+
+.bookmarkLink {
+  color: white;
+  display: block;
+  font-size: xx-large;
+  margin: .5vh;
+}
+
+
+
