@@ -16,7 +16,7 @@ class Time extends Component {
         return (
           <div className="dashboardComponent gridItemTime">
                 <h1>Time</h1>
-                <Clock />
+                <Clock width="100"/>
                 <SubTime />
           </div>
       )
@@ -24,3 +24,6 @@ class Time extends Component {
 }
 
 export default Time
+
+
+//https://www.w3schools.com/graphics/canvas_clock_start.asp

@@ -4,14 +4,17 @@ class Time extends Component {
     constructor() {
         super()
         this.state = {
+            digitalTime: new Date()
         }
     }
 
     
     render() {
+        setInterval(() => this.setState({digitalTime: new Date()}), 1000 );
+
         return (
           <div>
-                <p>Time</p>
+                <p>{String(this.state.digitalTime).split("(")[0]}</p>
           </div>
       )
     }

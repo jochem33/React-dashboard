@@ -19,7 +19,7 @@ class Weather extends Component {
         fetch(this.url)
             .then(response => response.json())
             .then(data => {
-                console.log(data.forecast.fivedayforecast)
+                // console.log(data.forecast.fivedayforecast)
                 this.setState({
                     forecast: data.forecast.fivedayforecast
                 })
