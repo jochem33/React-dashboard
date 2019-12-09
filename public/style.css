@@ -15,7 +15,7 @@ h1 {
 
 .readmorelink {
   color: white;
-  top: 4vh;
+  /* top: 4vh; */
   position: relative;
   display: block;
 }
