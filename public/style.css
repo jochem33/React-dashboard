@@ -29,7 +29,7 @@ h1 {
   /* grid-gap: 1vw 1vw; */
   grid-template-areas:
   'crypto weather weather bookmarks'
-  'news news time bookmarks'
+  'news news time github'
   'favorites favorites exchange github';
   grid-template-columns: 25vw 25vw 25vw 25vw;
   /* grid-template-rows: 24vh 24vh 24vh; */
@@ -94,3 +94,23 @@ h1 {
 
 
 
+
+
+.persons {
+  display: flex;
+  overflow-x: ;
+}
+
+.person{
+  max-width: 20vw;
+  margin-right: 2.5vw;
+}
+
+.contactImage {
+  border-radius: 50%;
+}
+
+.contactName {
+  display: block;
+  max-width: ;
+}

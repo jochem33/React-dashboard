@@ -29,9 +29,8 @@ class News extends Component {
         fetch("https://newsapi.org/v2/top-headlines?country=nl&apiKey=fce565e06e744a42be1d61af5dc0360b")
             .then(response => response.json())
             .then(data => {
-                console.log("news", data)
                 let article = data.articles[1]
-
+                
                 this.setState({
                     articleSource: {
                         url: article.url,

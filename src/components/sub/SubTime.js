@@ -14,7 +14,7 @@ class Time extends Component {
 
         return (
           <div>
-                <p>{String(this.state.digitalTime).split("(")[0]}</p>
+                <p>{String(this.state.digitalTime).split("GMT")[0]}</p>
           </div>
       )
     }

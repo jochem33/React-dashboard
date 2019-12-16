@@ -10,8 +10,9 @@ class Person extends Component {
     
     render() {
         return (
-          <div>
-                <p>Person</p>
+          <div className="person">
+              <h3 className="contactName">{this.props.name}</h3>
+              <img className="contactImage" alt="contactimage" src={this.props.imageUrl}></img>
           </div>
       )
     }
