@@ -98,19 +98,46 @@ h1 {
 
 .persons {
   display: flex;
-  overflow-x: ;
 }
 
 .person{
   max-width: 20vw;
   margin-right: 2.5vw;
+  color: white;
+
 }
 
 .contactImage {
   border-radius: 50%;
+  width: 40px;
+  float: right;
 }
 
 .contactName {
   display: block;
-  max-width: ;
+  /* max-width: ; */
+  float: left;
+
+}
+
+
+
+
+
+.gitNotification {
+  border-bottom: 1px solid grey;
+  margin-bottom: 2vh;
+}
+
+
+
+.gitNotification img {
+  position: relative;
+  top: 1.5vh;
+}
+
+
+.gitText {
+  text-align: left;
+  clear: both;
 }

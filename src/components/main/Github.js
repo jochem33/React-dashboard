@@ -6,7 +6,7 @@ class Github extends Component {
     constructor() {
         super()
         this.state = {
-            content: "Loading"
+            content: "Loading..."
         }
     }
 
@@ -16,16 +16,34 @@ class Github extends Component {
         fetch("https://api.github.com/users/jochem33/received_events", { 
             method: 'get', 
             headers: new Headers({
-              'Authorization': 'Basic '+btoa('jochem33: fff859384e5b180705280d5961c1bff585d91c08'), 
+              'Authorization': 'Basic '+btoa('jochem33:2ca26547e6ae958bc12013d0a5897f30def3d476'), 
               'Content-Type': 'application/x-www-form-urlencoded'
             })
         })
         .then(response => response.json())
         .then((data) => {
-            console.log("a", data)
-            let firstFiveNotifications = data[0, 4]
+            let firstFiveNotifications = data.slice(0, 5)
+            console.log(data)
             let content = data.map((notification) => {
+                let event = notification.type.split("Event")[0]
+                if(event.charAt(event.length-1) == "e") {
+                    event = event + "d"
+                }
+                else {
+                    event = event +"ed"
+                }
 
+
+                return (
+                    <div className="gitNotification">
+                        <Person name={notification.actor.display_login} imageUrl={notification.actor.avatar_url} link={notification.actor.url}/>
+                        <p className="gitText">{event} {notification.payload.ref_type}: </p>
+                        <p className="gitText">{notification.repo.name}</p>
+                    </div>
+                )
+            })
+            this.setState({
+                content: content
             })
         })
     }
@@ -43,3 +61,7 @@ class Github extends Component {
 }
 
 export default Github
+
+// alleen notif fff859384e5b180705280d5961c1bff585d91c08
+
+// https://developer.github.com/v3/activity/events/types/#followevent
