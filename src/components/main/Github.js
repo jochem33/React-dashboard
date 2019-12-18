@@ -1,6 +1,8 @@
 import React, {Component} from "react"
 
 import Person from "../sub/Person"
+import apikey from "../../key"
+
 
 class Github extends Component {
     constructor() {
@@ -16,7 +18,7 @@ class Github extends Component {
         fetch("https://api.github.com/users/jochem33/received_events", { 
             method: 'get', 
             headers: new Headers({
-              'Authorization': 'Basic '+btoa('jochem33:2ca26547e6ae958bc12013d0a5897f30def3d476'), 
+              'Authorization': 'Basic '+btoa('jochem33:' + apikey), 
               'Content-Type': 'application/x-www-form-urlencoded'
             })
         })
