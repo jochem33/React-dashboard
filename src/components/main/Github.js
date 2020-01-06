@@ -1,7 +1,7 @@
 import React, {Component} from "react"
 
 import Person from "../sub/Person"
-import apikey from "../../key"
+import apikey from "../../data/key"
 
 
 class Github extends Component {
@@ -14,7 +14,6 @@ class Github extends Component {
 
 
     componentDidMount() {
-        console.log("aaaaaa")
         fetch("https://api.github.com/users/jochem33/received_events", { 
             method: 'get', 
             headers: new Headers({

@@ -1,6 +1,6 @@
 import React, {Component} from "react"
 
-import bookmarksData from "../../bookmarksData"
+import bookmarksData from "../../data/bookmarksData"
 
 class Bookmarks extends Component {
     constructor() {
