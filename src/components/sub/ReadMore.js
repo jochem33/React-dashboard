@@ -21,7 +21,7 @@ class ReadMore extends Component {
 
         return (
             <div>
-                <a className="readmorelink" href={this.props.linkUrl}>{customText}</a>
+                <a className="readmorelink" target="_blank" href={this.props.linkUrl}>{customText}</a>
             </div>
       )
     }

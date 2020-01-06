@@ -42,7 +42,7 @@ h1 {
   /* width: 30vw; */
   /* height: 20vw; */
   padding: 1vw;
-  overflow: hidden;
+  overflow: scroll;
   margin:1vw;
 }
 
