@@ -24,10 +24,10 @@ class Github extends Component {
         .then(response => response.json())
         .then((data) => {
             let firstFiveNotifications = data.slice(0, 5)
-            console.log(data)
+            // console.log(data)
             let content = data.map((notification) => {
                 let event = notification.type.split("Event")[0]
-                if(event.charAt(event.length-1) == "e") {
+                if(event.charAt(event.length-1) === "e") {
                     event = event + "d"
                 }
                 else {
