@@ -30,7 +30,7 @@ class News extends Component {
             .then(response => response.json())
             .then(data => {
                 let article = data.articles[1]
-                
+                // console.log(article)
                 this.setState({
                     articleSource: {
                         url: article.url,

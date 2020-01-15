@@ -37,9 +37,9 @@ class Weather extends Component {
         if(this.state.forecast === "Loading...") {
             weatherInfo = this.state.forecast;
         } else {
-            weatherInfo = this.state.forecast.map((daydata) => {
+            weatherInfo = this.state.forecast.map((daydata, index) => {
                 return(
-                    <Cloud date={daydata.day} icon={daydata.iconurl} temp={daydata.maxtemperature + "°"}/>
+                    <Cloud date={daydata.day} icon={daydata.iconurl} key={index} temp={daydata.maxtemperature + "°"}/>
                 )
             })
 

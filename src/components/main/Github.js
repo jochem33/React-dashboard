@@ -23,9 +23,9 @@ class Github extends Component {
         })
         .then(response => response.json())
         .then((data) => {
-            let firstFiveNotifications = data.slice(0, 5)
+            // let firstFiveNotifications = data.slice(0, 5)
             // console.log(data)
-            let content = data.map((notification) => {
+            let content = data.map((notification, index) => {
                 let event = notification.type.split("Event")[0]
                 if(event.charAt(event.length-1) === "e") {
                     event = event + "d"
@@ -36,7 +36,7 @@ class Github extends Component {
 
 
                 return (
-                    <div className="gitNotification">
+                    <div className="gitNotification" key={index}>
                         <Person name={notification.actor.display_login} imageUrl={notification.actor.avatar_url} link={notification.actor.url}/>
                         <p className="gitText">{event} {notification.payload.ref_type}: </p>
                         <p className="gitText">{notification.repo.name}</p>

@@ -11,9 +11,9 @@ class Bookmarks extends Component {
 
     
     render() {
-        let bookmarks = bookmarksData.map((bookmark) => {
+        let bookmarks = bookmarksData.map((bookmark, index) => {
             return(
-                   <a className="bookmarkLink" href={bookmark.url}>{bookmark.text}</a>
+                   <a className="bookmarkLink" key={index} href={bookmark.url}>{bookmark.text}</a>
                 )
         })
 

@@ -11,7 +11,7 @@ class Exchange extends Component {
             base: "Loading...",
             rates: "Loading...",
             results: [],
-            currencies: "USD,GBP,CAD",
+            currencies: "USD,GBP",
             possibleSearches: [],
             allRates: "Loading...",
             search: ""
@@ -28,9 +28,9 @@ class Exchange extends Component {
                 // console.log(data)
                 let keys = Object.keys(data.rates)
                 let base = data.base
-                let newRates = keys.map((key) => {
+                let newRates = keys.map((key, index) => {
                     return (
-                        <KeyValue keytitle={key} value={data.rates[key]}/>
+                        <KeyValue keytitle={key} key={index} value={data.rates[key]}/>
                         )
                 })
                 this.setState({
@@ -65,7 +65,7 @@ class Exchange extends Component {
 
 
     updateResultList(searchValue) {
-        if(searchValue != ""){
+        if(searchValue !== ""){
             let matchingSearches = []
             for(let i = 0; i < this.state.possibleSearches.length; i++){
                 if(this.state.possibleSearches[i].includes(searchValue.toUpperCase())){
