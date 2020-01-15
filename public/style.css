@@ -7,6 +7,22 @@
 
 }
 
+/* ::-webkit-scrollbar {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #787878;
+  border-radius: 10px;
+
+  width: .1vw;
+  height: .1vw;
+} */
+
 
 h1 {
   margin: 0 !important;
@@ -42,7 +58,7 @@ h1 {
   /* width: 30vw; */
   /* height: 20vw; */
   padding: 1vw;
-  overflow: scroll;
+  overflow-y: scroll;
   margin:1vw;
 }
 
