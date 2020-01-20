@@ -12,7 +12,9 @@ class Person extends Component {
         return (
           <a className="person" href={this.props.link}>
               <h3 className="contactName">{this.props.name}</h3>
-              <img className="contactImage" alt="contactimage" src={this.props.imageUrl}></img>
+              {this.props.showImage === true &&
+                <img className="contactImage" alt="contact" src={this.props.imageUrl}></img>
+              }
           </a>
       )
     }

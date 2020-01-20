@@ -113,14 +113,14 @@ h1 {
 
 
 .persons {
-  display: flex;
+  display: grid;
+  grid-template-columns: 50% 50%;
 }
 
 .person{
   max-width: 20vw;
-  margin-right: 2.5vw;
+  margin: .5vw;
   color: white;
-
 }
 
 .contactImage {
@@ -156,4 +156,12 @@ h1 {
 .gitText {
   text-align: left;
   clear: both;
+}
+
+
+
+.contactsform {
+  width: 20vw;
+  height: 30vh;
+  display: flex;
 }
