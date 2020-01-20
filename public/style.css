@@ -40,7 +40,9 @@ h1 {
   width: 100vw;
   height: 100vh;
   /* overflow-y: hidden; */
-  background-color: #787878;
+  background-color: #3E3E3E;
+
+  /* background-color: #c6c6c6; */
   display: grid;
   /* grid-gap: 1vw 1vw; */
   grid-template-areas:
@@ -53,7 +55,10 @@ h1 {
 }
 
 .dashboardComponent {
-  background-color: #3E3E3E;
+  /* background-color: #3E3E3E; */
+  /* background-color: #e0c8c8; */
+  background-color: #808080;
+
   color: white;
   /* width: 30vw; */
   /* height: 20vw; */
@@ -141,7 +146,7 @@ h1 {
 
 
 .gitNotification {
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid white;
   margin-bottom: 2vh;
 }
 
