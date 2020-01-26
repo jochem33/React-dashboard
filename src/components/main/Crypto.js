@@ -4,7 +4,6 @@ import KeyValue from "../sub/KeyValue"
 import ReadMore from "../sub/ReadMore"
 
 
-
 class Crypto extends Component {
     constructor() {
         super()
@@ -35,41 +34,13 @@ class Crypto extends Component {
                 price: "Loading..."
             }
         }
+
+        this.fetchData = this.fetchData.bind(this)
+
     }
 
-    // getPrice(index){
-    //     fetch("https://api.kraken.com/0/public/Ticker?pair=" + this.state.cryptos[index].ticker + this.state.fiat)
-    //     .then(response => response.json())
-    //     .then(data => {
-    //         console.log("__________")
-
-    //         console.log(index, data)
-
-    //         let price = "loading";
-    //         if (data.result != null){
-    //             console.log(this.state.cryptos)
-    //             if (data.result["X" + this.state.cryptos[index].ticker + "Z" + this.state.fiat] != null){
-    //                 price = data.result["X" + this.state.cryptos[index].ticker + "Z" + this.state.fiat].a[0]
-    //                 console.log("a", index, price)
-
-    //                 this.setState({
-    //                     cryptos: {
-    //                         [index]: {
-    //                             price: price
-    //                         }
-    //                     }
-    //                 })
-    //             }
-    //         }
-    //     })
-    // }
-
-
+    
     fetchData(){
-        // for (var i = 0; i < 3; i++) {
-        //     this.getPrice(i)
-        // }
-
         fetch("https://api.kraken.com/0/public/Ticker?pair=" + this.state.crypto0.ticker + this.state.fiat)
             .then(response => response.json())
             .then(data => {
@@ -156,25 +127,17 @@ class Crypto extends Component {
         this.fetchData()
     }
 
-
-    changeCrypto(ticker){
-        this.setState({
-            crypto: ticker
-        })
-        this.fetchData()
-    }
-
     
     render() {
         return (
           <div className="dashboardComponent gridItemCrypto">
               <h1>Crypto</h1>
-
                 <KeyValue keytitle={this.state.crypto0.regularTicker} value={this.state.crypto0.price} />
                 <KeyValue keytitle={this.state.crypto1.regularTicker} value={this.state.crypto1.price} />
                 <KeyValue keytitle={this.state.crypto2.regularTicker} value={this.state.crypto2.price} />
                 <KeyValue keytitle={this.state.crypto3.regularTicker} value={this.state.crypto3.price} />
 
+                <button onClick={this.fetchData}>Refresh</button>
                 <ReadMore linkUrl="https://kraken.com"/>
 
           </div>
