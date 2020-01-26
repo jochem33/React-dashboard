@@ -60,10 +60,8 @@ class Favorites extends Component {
 
     addContact() {
         let oldContacts = eval(localStorage.getItem("contacts"))
-        console.log(oldContacts)
 
         if(oldContacts !== null){
-            console.log("aaaaAaaaAAaaaA")
             let newContacts = oldContacts.concat({name: this.state.name, imgurl: this.state.imgurl, email: this.state.email})
             localStorage.setItem("contacts", JSON.stringify(newContacts))
         } else {
@@ -94,7 +92,6 @@ class Favorites extends Component {
         } else {
             showAddButton = true;
         }
-        console.log(this.state.showForm)
         let showform = this.state.showForm ? "block" : "none"
         let antishowform = this.state.showForm ? "none" : "block"
 
