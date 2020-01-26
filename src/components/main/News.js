@@ -1,8 +1,6 @@
 import React, {Component} from "react"
 
 import ReadMore from "../sub/ReadMore"
-// let convert = require('xml-js')
-
 
 class News extends Component {
     constructor() {
@@ -16,13 +14,6 @@ class News extends Component {
             articleTitle: "Loading..."
         }
     }
-
-
-    // xmlToJson(xml) {
-    //     let result1 = convert.xml2json(xml, {compact: true, spaces: 4});
-    //     return result1
-    // }
-
 
 
     fetchNews() {
@@ -47,9 +38,6 @@ class News extends Component {
     componentDidMount() {
         this.fetchNews()
     }
-
-
-
 
     
     render() {

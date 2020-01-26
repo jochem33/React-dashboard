@@ -1,8 +1,6 @@
 import React, {Component} from "react"
 
 import KeyValue from "../sub/KeyValue"
-// import Search from "../sub/Search"
-
 
 class Exchange extends Component {
     constructor() {
@@ -25,7 +23,6 @@ class Exchange extends Component {
         fetch("https://api.exchangeratesapi.io/latest?base=EUR&symbols=" + this.state.currencies)
             .then(response => response.json())
             .then(data => {
-                // console.log(data)
                 let keys = Object.keys(data.rates)
                 let base = data.base
                 let newRates = keys.map((key, index) => {
@@ -43,7 +40,6 @@ class Exchange extends Component {
         fetch("https://api.exchangeratesapi.io/latest?base=EUR")
             .then(response => response.json())
             .then(data => {
-                // console.log(data)
                 let keys = Object.keys(data.rates)
 
                 this.setState({
@@ -98,7 +94,7 @@ class Exchange extends Component {
     render() {
         let searchResults = this.state.results.map((result) => {
             return (<div>
-                    <button onClick={() => {this.addcurrency(result)}}>{result}</button>
+                    <button className="resultbutton" onClick={() => {this.addcurrency(result)}}>{result}</button>
                     <br/>
                 </div>)
         })
@@ -110,6 +106,8 @@ class Exchange extends Component {
                 {this.state.rates}
 
                 <input
+                    autoComplete="off"
+                    className="searchbox"
                     type="text"
                     placeholder="search"
                     name="search"

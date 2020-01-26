@@ -1,7 +1,6 @@
 import React, {Component} from "react"
 
 import Person from "../sub/Person"
-// import contactsData from "../../contactsData"
 
 
 class Favorites extends Component {
@@ -37,8 +36,6 @@ class Favorites extends Component {
             this.setState({
                 contacts: mappedContacts
             })
-        } else {
-            // localStorage.setItem('contacts', '[{name: "Jan Derksen", imgurl: "", email: "example@example.com"}]');
         }
     }
 
@@ -104,7 +101,7 @@ class Favorites extends Component {
         return (
           <div className="dashboardComponent gridItemFavorites">
                 <h1>Favorites</h1>
-                <form onSubmit={this.handleSubmit} style={{display: showform}} className="contactsform">
+                <form autoComplete="off" onSubmit={this.handleSubmit} style={{display: showform}} className="contactsform">
                     <label>
                         Name: 
                         <input
@@ -129,8 +126,8 @@ class Favorites extends Component {
                         Image: 
                         <input
                             type="text"
-                            placeholder="image url"
-                            name="imgurl (optional)"
+                            placeholder="image url (optional)"
+                            name="imgurl"
                             onChange={this.handleChange} 
                             value={this.state.imgurl}
                         />

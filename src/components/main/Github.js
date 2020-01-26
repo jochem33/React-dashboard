@@ -23,8 +23,6 @@ class Github extends Component {
         })
         .then(response => response.json())
         .then((data) => {
-            // let firstFiveNotifications = data.slice(0, 5)
-            // console.log(data)
             let content = data.map((notification, index) => {
                 let event = notification.type.split("Event")[0]
                 if(event.charAt(event.length-1) === "e") {
@@ -55,14 +53,9 @@ class Github extends Component {
           <div className="dashboardComponent gridItemGithub">
                 <h1>Github</h1>
                 {this.state.content}
-                {/* <Person /> */}
           </div>
       )
     }
 }
 
 export default Github
-
-// alleen notif fff859384e5b180705280d5961c1bff585d91c08
-
-// https://developer.github.com/v3/activity/events/types/#followevent

@@ -24,6 +24,3 @@ class Time extends Component {
 }
 
 export default Time
-
-
-//https://www.w3schools.com/graphics/canvas_clock_start.asp

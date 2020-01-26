@@ -19,7 +19,6 @@ class Weather extends Component {
         fetch(this.url)
             .then(response => response.json())
             .then(data => {
-                // console.log(data.forecast.fivedayforecast)
                 this.setState({
                     forecast: data.forecast.fivedayforecast
                 })
@@ -42,8 +41,6 @@ class Weather extends Component {
                     <Cloud date={daydata.day} icon={daydata.iconurl} key={index} temp={daydata.maxtemperature + "°"}/>
                 )
             })
-
-            // weatherInfo = this.state.forecast[0].maxtemperature
         }
 
         return (
@@ -52,7 +49,6 @@ class Weather extends Component {
                 <div className="weatherContainer">
                     {weatherInfo}
                 </div>
-                {/* <Cloud date="" icon="" temp=""/> */}
                 <ReadMore linkUrl="https://www.buienradar.nl/" linkText="Weather by Buienradar"/>
           </div>
       )
