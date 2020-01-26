@@ -9,7 +9,7 @@ class ReadMore extends Component {
 
     
     render() {
-        let customText;
+        let customText
         if(this.props.linkText) {
             customText = this.props.linkText
 

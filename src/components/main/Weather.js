@@ -32,9 +32,9 @@ class Weather extends Component {
 
     
     render() {
-        let weatherInfo;
+        let weatherInfo
         if(this.state.forecast === "Loading...") {
-            weatherInfo = this.state.forecast;
+            weatherInfo = this.state.forecast
         } else {
             weatherInfo = this.state.forecast.map((daydata, index) => {
                 return(

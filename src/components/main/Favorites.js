@@ -15,8 +15,8 @@ class Favorites extends Component {
         }
 
         this.handleChange = this.handleChange.bind(this)
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.toggleFormVisibillity = this.toggleFormVisibillity.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this)
+        this.toggleFormVisibillity = this.toggleFormVisibillity.bind(this)
 
     }
 
@@ -24,7 +24,7 @@ class Favorites extends Component {
     updateContactList() {
         if (localStorage.getItem("contacts") !== null) {
             let localStorageContacts = localStorage.getItem("contacts")
-            let parsedContacts;
+            let parsedContacts
 
             parsedContacts = eval(localStorageContacts)
 
@@ -54,7 +54,7 @@ class Favorites extends Component {
 
 
     handleSubmit(event) {
-        event.preventDefault();
+        event.preventDefault()
         this.addContact()
     }
 
@@ -84,13 +84,13 @@ class Favorites extends Component {
     
     
     render() {
-        let showAddButton = false;
+        let showAddButton = false
         let contacts = this.state.contacts
 
         if(contacts === "Loading..." || contacts === []) {
             contacts = <a onClick={this.toggleFormVisibillity} className="readmorelink">Add your first contact +</a>
         } else {
-            showAddButton = true;
+            showAddButton = true
         }
         let showform = this.state.showForm ? "block" : "none"
         let antishowform = this.state.showForm ? "none" : "block"

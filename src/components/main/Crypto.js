@@ -44,7 +44,7 @@ class Crypto extends Component {
         fetch("https://api.kraken.com/0/public/Ticker?pair=" + this.state.crypto0.ticker + this.state.fiat)
             .then(response => response.json())
             .then(data => {
-                let price = "loading";
+                let price = "loading"
                 if (data.result != null){
                     if (data.result["X" + this.state.crypto0.ticker + "Z" + this.state.fiat] != null){
                         price = data.result["X" + this.state.crypto0.ticker + "Z" + this.state.fiat].a[0]
@@ -64,7 +64,7 @@ class Crypto extends Component {
         fetch("https://api.kraken.com/0/public/Ticker?pair=" + this.state.crypto1.ticker + this.state.fiat)
             .then(response => response.json())
             .then(data => {
-                let price = "loading";
+                let price = "loading"
                 if (data.result != null){
                     if (data.result["X" + this.state.crypto1.ticker + "Z" + this.state.fiat] != null){
                         price = data.result["X" + this.state.crypto1.ticker + "Z" + this.state.fiat].a[0]
@@ -84,7 +84,7 @@ class Crypto extends Component {
         fetch("https://api.kraken.com/0/public/Ticker?pair=" + this.state.crypto2.ticker + this.state.fiat)
             .then(response => response.json())
             .then(data => {
-                let price = "loading";
+                let price = "loading"
                 if (data.result != null){
                     if (data.result["X" + this.state.crypto2.ticker + "Z" + this.state.fiat] != null){
                         price = data.result["X" + this.state.crypto2.ticker + "Z" + this.state.fiat].a[0]
@@ -104,7 +104,7 @@ class Crypto extends Component {
         fetch("https://api.kraken.com/0/public/Ticker?pair=" + this.state.crypto3.ticker + this.state.fiat)
             .then(response => response.json())
             .then(data => {
-                let price = "loading";
+                let price = "loading"
                 if (data.result != null){
                     if (data.result["X" + this.state.crypto3.ticker + "Z" + this.state.fiat] != null){
                         price = data.result["X" + this.state.crypto3.ticker + "Z" + this.state.fiat].a[0]

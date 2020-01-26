@@ -10,7 +10,7 @@ class Time extends Component {
 
     
     render() {
-        setInterval(() => this.setState({digitalTime: new Date()}), 1000 );
+        setInterval(() => this.setState({digitalTime: new Date()}), 1000 )
 
         return (
           <div>
