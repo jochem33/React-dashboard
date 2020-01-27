@@ -10,8 +10,8 @@ class News extends Component {
                 url: "newsapi.org",
                 text: "newsapi"
             },
-            articleText: "Loading...",
-            articleTitle: "Loading..."
+            articleText: false,
+            articleTitle: false
         }
     }
 
@@ -44,8 +44,8 @@ class News extends Component {
         return (
           <div className="dashboardComponent gridItemNews">
                 <h1>News</h1>
-                <h2>{this.state.articleTitle}</h2>
-                <p>{this.state.articleText}</p>
+                {this.state.articleTitle !== false && <h2>{this.state.articleTitle}</h2>}
+                {this.state.articleText !== false && <p>{this.state.articleText}</p>}
                 <ReadMore linkText="News by NEWSAPI" linkUrl="newsapi.org"/>
                 <ReadMore linkText={"Article: " + this.state.articleSource.text} linkUrl={this.state.articleSource.url}/>
           </div>

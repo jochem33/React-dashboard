@@ -6,12 +6,12 @@ class Exchange extends Component {
     constructor() {
         super()
         this.state = {
-            base: "Loading...",
-            rates: "Loading...",
+            base: false,
+            rates: false,
             results: [],
             currencies: "USD,GBP",
             possibleSearches: [],
-            allRates: "Loading...",
+            allRates: false,
             search: ""
         }
 
@@ -103,7 +103,7 @@ class Exchange extends Component {
             <div className="dashboardComponent gridItemExchange">
                 <h1>Exchange</h1>
                 <p>{this.state.base}</p>
-                {this.state.rates}
+                {this.state.rates !== false ? this.state.rates : <p>Loading...<br/></p>}
 
                 <input
                     autoComplete="off"

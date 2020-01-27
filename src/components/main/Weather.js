@@ -8,7 +8,7 @@ class Weather extends Component {
     constructor() {
         super()
         this.state = {
-            forecast: "Loading..."
+            forecast: false
         }
 
         this.url = "https://data.buienradar.nl/2.0/feed/json"
@@ -33,8 +33,8 @@ class Weather extends Component {
     
     render() {
         let weatherInfo
-        if(this.state.forecast === "Loading...") {
-            weatherInfo = this.state.forecast
+        if(this.state.forecast === false) {
+            weatherInfo = <p>Loading...<br/></p>
         } else {
             weatherInfo = this.state.forecast.map((daydata, index) => {
                 return(

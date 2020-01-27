@@ -8,7 +8,7 @@ class Github extends Component {
     constructor() {
         super()
         this.state = {
-            content: "Loading..."
+            content: false
         }
     }
 
@@ -52,7 +52,7 @@ class Github extends Component {
         return (
           <div className="dashboardComponent gridItemGithub">
                 <h1>Github</h1>
-                {this.state.content}
+                {this.state.content !== false ? this.state.content : <p>Loading...</p>}
           </div>
       )
     }

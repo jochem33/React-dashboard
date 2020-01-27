@@ -13,26 +13,27 @@ class Crypto extends Component {
                 regularName: "Bitcoin",
                 regularTicker: "BTC",
                 ticker: "XBT",
-                price: "Loading..."
+                price: false
             },
             crypto1: {
                 regularName: "Litecoin",
                 regularTicker: "LTC",
                 ticker: "LTC",
-                price: "Loading..."
+                price: false
             },
             crypto2: {
                 regularName: "Ripple",
                 regularTicker: "XRP",
                 ticker: "XRP",
-                price: "Loading..."
+                price: false
             },
             crypto3: {
                 regularName: "Etherium",
                 regularTicker: "ETH",
                 ticker: "ETH",
-                price: "Loading..."
-            }
+                price: false
+            },
+            buttonDisabled: false
         }
 
         this.fetchData = this.fetchData.bind(this)
@@ -41,10 +42,13 @@ class Crypto extends Component {
 
     
     fetchData(){
+        this.setState({
+            buttonDisabled: true
+        })
         fetch("https://api.kraken.com/0/public/Ticker?pair=" + this.state.crypto0.ticker + this.state.fiat)
             .then(response => response.json())
             .then(data => {
-                let price = "loading"
+                let price
                 if (data.result != null){
                     if (data.result["X" + this.state.crypto0.ticker + "Z" + this.state.fiat] != null){
                         price = data.result["X" + this.state.crypto0.ticker + "Z" + this.state.fiat].a[0]
@@ -64,7 +68,7 @@ class Crypto extends Component {
         fetch("https://api.kraken.com/0/public/Ticker?pair=" + this.state.crypto1.ticker + this.state.fiat)
             .then(response => response.json())
             .then(data => {
-                let price = "loading"
+                let price
                 if (data.result != null){
                     if (data.result["X" + this.state.crypto1.ticker + "Z" + this.state.fiat] != null){
                         price = data.result["X" + this.state.crypto1.ticker + "Z" + this.state.fiat].a[0]
@@ -84,7 +88,7 @@ class Crypto extends Component {
         fetch("https://api.kraken.com/0/public/Ticker?pair=" + this.state.crypto2.ticker + this.state.fiat)
             .then(response => response.json())
             .then(data => {
-                let price = "loading"
+                let price
                 if (data.result != null){
                     if (data.result["X" + this.state.crypto2.ticker + "Z" + this.state.fiat] != null){
                         price = data.result["X" + this.state.crypto2.ticker + "Z" + this.state.fiat].a[0]
@@ -94,7 +98,7 @@ class Crypto extends Component {
                                 regularName: "Ripple",
                                 regularTicker: "XRP",
                                 ticker: "XRP",
-                                price: price
+                                price: price,
                             }
                         })
                     }
@@ -104,7 +108,7 @@ class Crypto extends Component {
         fetch("https://api.kraken.com/0/public/Ticker?pair=" + this.state.crypto3.ticker + this.state.fiat)
             .then(response => response.json())
             .then(data => {
-                let price = "loading"
+                let price
                 if (data.result != null){
                     if (data.result["X" + this.state.crypto3.ticker + "Z" + this.state.fiat] != null){
                         price = data.result["X" + this.state.crypto3.ticker + "Z" + this.state.fiat].a[0]
@@ -114,8 +118,9 @@ class Crypto extends Component {
                                 regularName: "Etherium",
                                 regularTicker: "ETH",
                                 ticker: "ETH",
-                                price: price
-                            }
+                                price: price,
+                            },
+                            buttonDisabled: false
                         })
                     }
                 }
@@ -132,12 +137,13 @@ class Crypto extends Component {
         return (
           <div className="dashboardComponent gridItemCrypto">
               <h1>Crypto</h1>
-                <KeyValue keytitle={this.state.crypto0.regularTicker} value={this.state.crypto0.price} />
-                <KeyValue keytitle={this.state.crypto1.regularTicker} value={this.state.crypto1.price} />
-                <KeyValue keytitle={this.state.crypto2.regularTicker} value={this.state.crypto2.price} />
-                <KeyValue keytitle={this.state.crypto3.regularTicker} value={this.state.crypto3.price} />
+                {this.state.crypto0.price ? <KeyValue keytitle={this.state.crypto0.regularTicker} value={this.state.crypto0.price} /> : <p>Loading...<br/></p> }
+                {this.state.crypto1.price && <KeyValue keytitle={this.state.crypto1.regularTicker} value={this.state.crypto1.price} />}
+                {this.state.crypto2.price && <KeyValue keytitle={this.state.crypto2.regularTicker} value={this.state.crypto2.price} />}
+                {this.state.crypto3.price && <KeyValue keytitle={this.state.crypto3.regularTicker} value={this.state.crypto3.price} />}
+                
 
-                <button onClick={this.fetchData}>Refresh</button>
+                <button onClick={this.fetchData} disabled={this.state.buttonDisabled}>Refresh</button>
                 <ReadMore linkUrl="https://kraken.com"/>
 
           </div>

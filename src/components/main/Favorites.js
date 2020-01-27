@@ -7,7 +7,7 @@ class Favorites extends Component {
     constructor() {
         super()
         this.state = {
-            contacts: "Loading...",
+            contacts: false,
             name: "",
             email: "",
             imgurl: "",
@@ -87,7 +87,7 @@ class Favorites extends Component {
         let showAddButton = false
         let contacts = this.state.contacts
 
-        if(contacts === "Loading..." || contacts === []) {
+        if(contacts === false || contacts === []) {
             contacts = <a onClick={this.toggleFormVisibillity} className="readmorelink">Add your first contact +</a>
         } else {
             showAddButton = true
@@ -133,10 +133,11 @@ class Favorites extends Component {
                 </form>
                 <div style={{display: antishowform}}>
                     <div className="persons">
-                        {contacts}
+
+                        {contacts && contacts}
+
                     </div>
-                    {showAddButton && 
-                    <a onClick={this.toggleFormVisibillity} className="readmorelink">Add new contact +</a>}
+                    {showAddButton && <a onClick={this.toggleFormVisibillity} className="readmorelink">Add new contact +</a>}
                 </div>
           </div>
       )
