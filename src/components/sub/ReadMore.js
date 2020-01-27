@@ -1,30 +1,21 @@
-import React, {Component} from "react"
+import React from "react"
 
-class ReadMore extends Component {
-    constructor() {
-        super()
-        this.state = {
-        }
+function ReadMore(props) {
+    let customText
+    if(props.linkText) {
+        customText = props.linkText
+
+    } else {
+        customText = "Read more..."
+
     }
-
     
-    render() {
-        let customText
-        if(this.props.linkText) {
-            customText = this.props.linkText
 
-        } else {
-            customText = "Read more..."
-
-        }
-        
-
-        return (
-            <div>
-                <a className="readmorelink" target="_blank" rel="noopener noreferrer" href={this.props.linkUrl}>{customText}</a>
-            </div>
-      )
-    }
+    return (
+        <div>
+            <a className="readmorelink" target="_blank" rel="noopener noreferrer" href={props.linkUrl}>{customText}</a>
+        </div>
+    )
 }
 
 export default ReadMore

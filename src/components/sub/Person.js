@@ -1,23 +1,14 @@
-import React, {Component} from "react"
+import React from "react"
 
-class Person extends Component {
-    constructor() {
-        super()
-        this.state = {
+function Person(props) {
+  return (
+    <a className="person" href={props.link}>
+        <h3 className="contactName">{props.name}</h3>
+        {props.showImage === true &&
+          <img className="contactImage" alt="contact" src={props.imageUrl}></img>
         }
-    }
-
-    
-    render() {
-        return (
-          <a className="person" href={this.props.link}>
-              <h3 className="contactName">{this.props.name}</h3>
-              {this.props.showImage === true &&
-                <img className="contactImage" alt="contact" src={this.props.imageUrl}></img>
-              }
-          </a>
-      )
-    }
+    </a>
+  )
 }
 
 export default Person

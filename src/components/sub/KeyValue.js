@@ -1,20 +1,11 @@
-import React, {Component} from "react"
+import React from "react"
 
-class KeyValue extends Component {
-    constructor() {
-        super()
-        this.state = {
-        }
-    }
-
-    
-    render() {
-        return (
-          <div>
-                <p>{this.props.keytitle}: {this.props.value}</p>
-          </div>
-      )
-    }
+function KeyValue(props){
+    return (
+        <div>
+            <p>{props.keytitle}: {props.value}</p>
+        </div>
+    )
 }
 
 export default KeyValue

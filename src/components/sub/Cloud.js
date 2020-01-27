@@ -1,27 +1,16 @@
-import React, {Component} from "react"
+import React from "react"
 
-class Cloud extends Component {
-    constructor() {
-        super()
-        this.state = {
-        }
-    }
+function Cloud(props) {    
+    let day
+    day = props.date.split("-")[2].substring(0, 2) + "/" + props.date.split("-")[1]
 
-    
-    render() {
-        let day
-        // console.log(this.props.date.split("-"))
-        day = this.props.date.split("-")[2].substring(0, 2) + "/" + this.props.date.split("-")[1]
-
-        return (
-          <div className="cloudComponent">
-                {/* <p>Cloud</p> */}
-                <p className="weatherDate">{day}</p>
-                <img className="weatherImage" alt="buienradaricon" src={this.props.icon}></img>
-                <p className="weatherTemp">{this.props.temp}</p>
-          </div>
-      )
-    }
+    return (
+        <div className="cloudComponent">
+            <p className="weatherDate">{day}</p>
+            <img className="weatherImage" alt="buienradaricon" src={props.icon}></img>
+            <p className="weatherTemp">{props.temp}</p>
+        </div>
+    )
 }
 
 export default Cloud
