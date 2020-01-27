@@ -64,7 +64,7 @@ class Exchange extends Component {
         if(searchValue !== ""){
             let matchingSearches = []
             for(let i = 0; i < this.state.possibleSearches.length; i++){
-                if(this.state.possibleSearches[i].includes(searchValue.toUpperCase())){
+                if(this.state.possibleSearches[i].includes(searchValue.toUpperCase()) && !this.state.currencies.includes(this.state.possibleSearches[i])){
                     matchingSearches.push(this.state.possibleSearches[i])
                 }
             }
@@ -80,20 +80,26 @@ class Exchange extends Component {
 
 
     addcurrency(result){
-        let newCurrency = <KeyValue keytitle={result} value={this.state.allRates[result]}/>
-        let newResultsState = this.state.rates.concat(newCurrency)
+        if(!this.state.currencies.includes(result)) {
+            let newCurrency = <KeyValue keytitle={result} value={this.state.allRates[result]}/>
+            let newResultsState = this.state.rates.concat(newCurrency)
+            let currencies = this.state.currencies + result
+    
+            this.setState({
+                rates: newResultsState,
+                result: [],
+                search: "",
+                currencies: currencies
+            })
 
-        this.setState({
-            rates: newResultsState,
-            result: [],
-            search: ""
-        })
+            this.updateResultList("")
+        }
     }
 
     
     render() {
-        let searchResults = this.state.results.map((result) => {
-            return (<div>
+        let searchResults = this.state.results.map((result, index) => {
+            return (<div key={index}>
                     <button className="resultbutton" onClick={() => {this.addcurrency(result)}}>{result}</button>
                     <br/>
                 </div>)
