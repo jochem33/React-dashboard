@@ -7,6 +7,8 @@ import ReadMore from "../sub/ReadMore"
 class Crypto extends Component {
     constructor() {
         super()
+        // setting up state
+        // false is the default for things that shouldn't display when they are not yet loaded
         this.state = {
             fiat: "USD",
             crypto0: {
@@ -36,23 +38,32 @@ class Crypto extends Component {
             buttonDisabled: false
         }
 
+        // bind function(s) that use setstate
         this.fetchData = this.fetchData.bind(this)
 
     }
 
     
+    // this function fetches the data and updates state accordingly
     fetchData(){
+        //disable refresh button while refreshing 
         this.setState({
             buttonDisabled: true
         })
+
+        // fetching information for the first cryptocurrency (bitcoin)
         fetch("https://api.kraken.com/0/public/Ticker?pair=" + this.state.crypto0.ticker + this.state.fiat)
             .then(response => response.json())
             .then(data => {
                 let price
+
+                // if the api returns anything
                 if (data.result != null){
+                    // if the api didn't return an error
                     if (data.result["X" + this.state.crypto0.ticker + "Z" + this.state.fiat] != null){
                         price = data.result["X" + this.state.crypto0.ticker + "Z" + this.state.fiat].a[0]
 
+                        //update state
                         this.setState({
                             crypto0: {
                                 regularName: "Bitcoin",
@@ -65,6 +76,8 @@ class Crypto extends Component {
                 }
         })
 
+
+        // fetching information for the second cryptocurrency (litecoin)
         fetch("https://api.kraken.com/0/public/Ticker?pair=" + this.state.crypto1.ticker + this.state.fiat)
             .then(response => response.json())
             .then(data => {
@@ -85,6 +98,8 @@ class Crypto extends Component {
                 }
         })
 
+
+        // fetching information for the third cryptocurrency (ripple)
         fetch("https://api.kraken.com/0/public/Ticker?pair=" + this.state.crypto2.ticker + this.state.fiat)
             .then(response => response.json())
             .then(data => {
@@ -105,6 +120,8 @@ class Crypto extends Component {
                 }
         })
 
+
+        // fetching information for the fourth cryptocurrency (Etherium)
         fetch("https://api.kraken.com/0/public/Ticker?pair=" + this.state.crypto3.ticker + this.state.fiat)
             .then(response => response.json())
             .then(data => {
@@ -129,6 +146,7 @@ class Crypto extends Component {
 
 
     componentDidMount() {
+        // load cryptocurrency data when component is mounted
         this.fetchData()
     }
 

@@ -1,7 +1,10 @@
 import React from "react"
 
+// component used for linking external sites
+
 function ReadMore(props) {
     let customText
+    // if there's a custom link text, use that. Else use "Read more.."
     if(props.linkText) {
         customText = props.linkText
 

@@ -1,5 +1,7 @@
 import React from "react"
 
+// person component is used for all kind of person elements that can be used on a page
+
 function Person(props) {
   return (
     <a className="person" href={props.link}>

@@ -9,7 +9,7 @@ import News from "./components/main/News"
 import Time from "./components/main/Time"
 import Weather from "./components/main/Weather"
 
-
+// this component renders all main components
 
 
 class App extends Component {

@@ -1,10 +1,12 @@
 import React, {Component} from "react"
 
+
+// this component renders a clock on a canvas
+
+
 class Clock extends Component {
     constructor() {
         super()
-        this.state = {
-        }
     }
 
     
@@ -58,12 +60,6 @@ class Clock extends Component {
 
 
     componentDidMount() {
-        // let canvas = document.getElementById("canvas")
-        // let ctx = canvas.getContext("2d")
-        // let radius = canvas.height / 2
-        // ctx.translate(radius, radius)
-        // radius = radius * 0.90
-        // this.drawClock()
         setInterval(this.drawClock(), 1000 )
     }
 
