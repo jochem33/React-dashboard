@@ -44,7 +44,7 @@ class Github extends Component {
 
                 return (
                     <div className="gitNotification" key={index}>
-                        <Person name={notification.actor.display_login} imageUrl={notification.actor.avatar_url} showImage={true} link={notification.actor.url}/>
+                        <Person name={notification.actor.display_login} imageUrl={notification.actor.avatar_url} showImage={true} link={"https://github.com/" + notification.actor.display_login}/>
                         <p className="gitText">{event} {notification.payload.ref_type}: </p>
                         <p className="gitText">{notification.repo.name}</p>
                     </div>
