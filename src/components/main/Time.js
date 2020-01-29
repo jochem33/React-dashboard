@@ -1,4 +1,4 @@
-import React, {Component} from "react"
+import React from "react"
 
 import Clock from "../sub/Clock"
 import SubTime from "../sub/SubTime"
